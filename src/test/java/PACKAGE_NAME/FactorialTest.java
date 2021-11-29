@@ -4,13 +4,35 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class FactorialTest {
+
     @Test
-    public void testFact1(){
+    public void testFactorialFive(){
         //given
-        Integer expected = 5040;
+        Long expected = 120l;
         //when
-        Integer actual = Factorial.factorial(7);
+        Long actual = Factorial.factorial(5);
         //then
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testFactorialSeven(){
+        //given
+        Long expected = 5040l;
+        //when
+        Long actual = Factorial.factorial(7);
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFactorialNine(){
+        //given
+        Long expected = 362880l;
+        //when
+        Long actual = Factorial.factorial(9);
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
 }
