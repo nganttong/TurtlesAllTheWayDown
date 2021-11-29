@@ -31,10 +31,20 @@ public class GCDTest {
 
     @Test
     public void testTiming(){
-        //given
-        GCD testGCD = new GCD();
-        //when
-        Instant begin = Instant.now();
+            //given
+            Instant beginGCD = Instant.now();
+            GCD.gcd(5, 1);
+            Instant endGCD = Instant.now();
+            //when
+            Instant beginGCD2 = Instant.now();
+            GCD.gcd2(5, 1);
+            Instant endGCD2 = Instant.now();
+            long timeElapsed1 = Duration.between(beginGCD, endGCD).toMillis();
+            long timeElapsed2 = Duration.between(beginGCD2, endGCD2).toMillis();
+
+            boolean actual = timeElapsed1 > timeElapsed2;
+            //then
+            Assert.assertTrue(actual);
     }
 
 }
